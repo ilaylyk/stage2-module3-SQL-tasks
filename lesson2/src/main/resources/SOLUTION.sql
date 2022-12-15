@@ -1,39 +1,43 @@
-insert into student(name,groupnumber,birthday) values ('John', 1, current_date);
-insert into student(name,groupnumber,birthday) values ('Chris', 1, current_date);
-insert into student(name,groupnumber,birthday) values ('Carl', 1, current_date);
-insert into student(name,groupnumber,birthday) values ('Oliver',2,current_date);
-insert into student(name,groupnumber,birthday) values ('James',2,current_date);
-insert into student(name,groupnumber,birthday) values ('Lucas',2,current_date);
-insert into student(name,groupnumber,birthday) values ('Henry',2,current_date);
-insert into student(name,groupnumber,birthday) values ('Jacob',3,current_date);
-insert into student(name,groupnumber,birthday) values ('Logan',3,current_date);
-insert into student(name,groupnumber,birthday) values ('Ilay',4,current_date);
-insert into student(name,groupnumber,birthday) values ('Alex',4,current_date);
-insert into student(name,groupnumber,birthday) values ('Ronaldo',5,current_date);
-insert into student(name,groupnumber,birthday) values ('Stephani',5,current_date);
-insert into subject(name, grade) VALUES ('Art', 1);
-insert into subject(name, grade) VALUES ('Music', 1);
-insert into subject(name, grade) VALUES ('Geography', 2);
-insert into subject(name, grade) VALUES ('History', 2);
-insert into subject(name, grade) VALUES ('PE', 3);
-insert into subject(name, grade) VALUES ('Math', 3);
-insert into subject(name, grade) VALUES ('Science', 4);
-insert into subject(name, grade) VALUES ('IT', 4);
-insert into subject(name, grade) VALUES ('Astronomy', 5);
-insert into subject(name, grade) VALUES ('Physic', 5);
-insert into paymenttype(name) values ('DAILY');
-insert into paymenttype(name) values ('WEEKLY');
-insert into paymenttype(name) values ('MONTHLY');
-insert into payment (student_id, type_id, amount, payment_date) values (SELECT id FROM student WHERE name = 'John', SELECT id FROM paymenttype WHERE name = 'WEEKLY', 5015.45, '2020-02-07 08:09:00');
-insert into payment (student_id, type_id, amount, payment_date) values (SELECT id FROM student WHERE name = 'Oliver', SELECT id FROM paymenttype WHERE name = 'MONTHLY', 6015.45, '2020-04-07 08:09:00');
-insert into payment (student_id, type_id, amount, payment_date) values (SELECT id FROM student WHERE name = 'Henry', SELECT id FROM paymenttype WHERE name = 'WEEKLY', 5115.45, '2020-02-08 08:09:00');
-insert into payment (student_id, type_id, amount, payment_date) values (SELECT id FROM student WHERE name = 'James', SELECT id FROM paymenttype WHERE name = 'DAILY', 7015.45, '2020-03-17 08:09:00');
-insert into payment (student_id, type_id, amount, payment_date) values (SELECT id FROM student WHERE name = 'David', SELECT id FROM paymenttype WHERE name = 'WEEKLY', 4015.45, '2020-01-07 08:09:00');
-insert into payment (student_id, type_id, amount, payment_date) values (SELECT id FROM student WHERE name = 'Roza', SELECT id FROM paymenttype WHERE name = 'MONTHLY', 8015.45, '2020-02-09 08:09:00');
-insert into mark (mark, student_id, subject_id) values (8, SELECT id FROM student WHERE name = 'Chris', SELECT id FROM subject WHERE name = 'Art');
-insert into mark (mark, student_id, subject_id) values (5, SELECT id FROM student WHERE name = 'Oliver', SELECT id FROM subject WHERE name = 'History');
-insert into mark (mark, student_id, subject_id) values (9, SELECT id FROM student WHERE name = 'James', SELECT id FROM subject WHERE name = 'Geography');
-insert into mark (mark, student_id, subject_id) values (4, SELECT id FROM student WHERE name = 'Jacob', SELECT id FROM subject WHERE name = 'Math');
-insert into mark (mark, student_id, subject_id) values (9, SELECT id FROM student WHERE name = 'Logan', SELECT id FROM subject WHERE name = 'PE');
-insert into mark (mark, student_id, subject_id) values (9, SELECT id FROM student WHERE name = 'Stephani', SELECT id FROM subject WHERE name = 'IT');
-insert into mark (mark, student_id, subject_id) values (8, SELECT id FROM student WHERE name = 'Roza', SELECT id FROM subject WHERE name = 'Law');
+INSERT INTO student (name, birthday, groupnumber)
+VALUES ('John', current_date, 1),
+       ('Chris', current_date, 1),
+       ('Carl', current_date, 1),
+       ('Oliver', current_date, 2),
+       ('James', current_date, 2),
+       ('Lucas', current_date, 2),
+       ('Henry', current_date, 2),
+       ('Jacob', current_date, 3),
+       ('Logan', current_date, 3),
+       ('Ilay', current_date, 4),
+       ('Ronaldo', current_date, 5);
+
+INSERT INTO subject (name, description, grade)
+VALUES ('Art', 'interesting subject', 1),
+       ('music', 'interesting subject', 1),
+       ('Geography', 'interesting subject', 2),
+       ('history', 'interesting subject', 2),
+       ('PE', 'interesting subject', 3),
+       ('math', 'interesting subject', 3),
+       ('Science', 'interesting subject', 4),
+       ('IT', 'interesting subject', 4),
+       ('Biology', 'interesting subject', 5),
+       ('Chemistry', 'interesting subject', 5);
+
+
+INSERT INTO paymenttype (name)
+VALUES ('DAILY'), ('WEEKLY'), ('MONTHLY');
+
+INSERT INTO payment (type_id, amount, payment_date, student_id)
+VALUES (2, 1, '2020-02-07 08:09:00', 1),
+       (3, 1, '2020-02-07 08:09:00', 4),
+       (2, 1, '2020-02-07 08:09:00', 7),
+       (1, 1, '2020-02-07 08:09:00', 5),
+       (1, 10, '2020-02-07 08:09:00', 10);
+
+INSERT INTO mark (student_id, subject_id, mark)
+VALUES (2, 1, 8),
+       (4, 4, 5),
+       (5, 3, 9),
+       (8, 6, 4),
+       (9, 5, 9),
+       (11, 1, 7);
