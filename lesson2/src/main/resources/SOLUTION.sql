@@ -28,19 +28,10 @@ insert into payment (student_id, type_id, amount, payment_date) values (SELECT i
 insert into payment (student_id, type_id, amount, payment_date) values (SELECT id FROM student WHERE name = 'Oliver', SELECT id FROM paymenttype WHERE name = 'MONTHLY', 6015.45, '2020-04-07 08:09:00');
 insert into payment (student_id, type_id, amount, payment_date) values (SELECT id FROM student WHERE name = 'Henry', SELECT id FROM paymenttype WHERE name = 'WEEKLY', 5115.45, '2020-02-08 08:09:00');
 insert into payment (student_id, type_id, amount, payment_date) values (SELECT id FROM student WHERE name = 'James', SELECT id FROM paymenttype WHERE name = 'DAILY', 7015.45, '2020-03-17 08:09:00');
-insert into payment (student_id, type_id, amount, payment_date) values (SELECT id FROM student WHERE name = 'Roza', SELECT id FROM paymenttype WHERE name = 'MONTHLY', 8015.45, '2020-02-09 08:09:00');
-insert into mark (mark, student_id, subject_id) values (8, SELECT id FROM student WHERE name = 'Chris', SELECT id FROM subject WHERE name = 'Art');
-insert into mark (mark, student_id, subject_id) values (5, SELECT id FROM student WHERE name = 'Oliver', SELECT id FROM subject WHERE name = 'History');
-insert into mark (mark, student_id, subject_id) values (9, SELECT id FROM student WHERE name = 'James', SELECT id FROM subject WHERE name = 'Geography');
-insert into mark (mark, student_id, subject_id) values (4, SELECT id FROM student WHERE name = 'Jacob', SELECT id FROM subject WHERE name = 'Math');
-insert into mark (mark, student_id, subject_id) values (9, SELECT id FROM student WHERE name = 'Logan', SELECT id FROM subject WHERE name = 'PE');
-insert into mark (mark, student_id, subject_id) values (9, SELECT id FROM student WHERE name = 'Stephani', SELECT id FROM subject WHERE name = 'IT');
-insert into mark (mark, student_id, subject_id) values (8, SELECT id FROM student WHERE name = 'Roza', SELECT id FROM subject WHERE name = 'Law');
-
+insert into payment (student_id, type_id, amount, payment_date) values (SELECT id FROM student WHERE name = 'Ronaldo', SELECT id FROM paymenttype WHERE name = 'MONTHLY', 8015.45, '2020-02-09 08:09:00');
 INSERT INTO mark (student_id, subject_id, mark) VALUES ((SELECT id FROM student WHERE name = 'Chris'), (SELECT id FROM subject WHERE name = 'Art'), 8);
 INSERT INTO mark (student_id, subject_id, mark) VALUES ((SELECT id FROM student WHERE name = 'Oliver'), (SELECT id FROM subject WHERE name = 'History'), 5);
 INSERT INTO mark (student_id, subject_id, mark) VALUES ((SELECT id FROM student WHERE name = 'James'), (SELECT id FROM subject WHERE name = 'Geography'), 9);
 INSERT INTO mark (student_id, subject_id, mark) VALUES ((SELECT id FROM student WHERE name = 'Jacob'), (SELECT id FROM subject WHERE name = 'Math'), 4);
 INSERT INTO mark (student_id, subject_id, mark) VALUES ((SELECT id FROM student WHERE name = 'Logan'), (SELECT id FROM subject WHERE name = 'PE'), 9);
-INSERT INTO mark (student_id, subject_id, mark) VALUES ((SELECT id FROM student WHERE name = 'Stephani'), (SELECT id FROM subject WHERE name = 'IT'), 9);
-INSERT INTO mark (student_id, subject_id, mark) VALUES ((SELECT id FROM student WHERE name = 'Roza'), (SELECT id FROM subject WHERE name = 'Physic'), 6);
+INSERT INTO mark (student_id, subject_id, mark) VALUES ((SELECT id FROM student WHERE name = 'Ronaldo'), (SELECT id FROM subject WHERE name = 'IT'), 9);
